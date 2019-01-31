@@ -7,7 +7,6 @@ from plone.autoform import directives
 from plone.supermodel.model import Schema
 from plone.tiles import Tile
 from zope import schema
-from zope.interface import Interface
 
 
 class INewsTile(Schema):
@@ -39,10 +38,6 @@ class INewsTile(Schema):
         default=100,
         min=1,
     )
-
-
-class INewsTileLayer(Interface):
-    """Layer (request marker interface) for content listing tile views"""
 
 
 class NewsTile(Tile):
