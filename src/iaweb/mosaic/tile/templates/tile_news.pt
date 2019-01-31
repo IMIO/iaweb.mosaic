@@ -8,10 +8,12 @@
         <section tal:define="result view/contents">
             <tal:news tal:repeat="news result">
             <div class="items">
+                <a href="" tal:attributes="href news/getURL">
                 <div class="title" tal:content="news/Title"></div>
                 <div class="description" tal:content="news/Description"></div>
                 <div class="image-background"
                      tal:attributes="style string:background-image:url(${news/getURL}/@@images/image)"></div>
+                </a>
             </div>
             </tal:news>
         </section>
