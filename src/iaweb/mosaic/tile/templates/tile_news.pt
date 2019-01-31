@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal">
+    <body>
+        <section tal:define="result view/contents">
+            <tal:news tal:repeat="news result">
+            <div class="items">
+                <div class="title" tal:content="news/Title"></div>
+                <div class="description" tal:content="news/Description"></div>
+                <div class="image-background"
+                     tal:attributes="style string:background-image:url(${news/getURL}/@@images/image)"></div>
+            </div>
+            </tal:news>
+        </section>
+    </body>
+</html>

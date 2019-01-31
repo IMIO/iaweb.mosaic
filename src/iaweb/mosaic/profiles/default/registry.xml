@@ -1,5 +1,25 @@
 <?xml version="1.0"?>
 <registry>
-<!-- -*- extra stuff goes here -*- -->
+
+    <records interface="plone.app.mosaic.interfaces.IWeightedDict"
+        prefix="plone.app.mosaic.tiles_categories.iaweb">
+        <value key="name">iaweb</value>
+        <value key="label">Iaweb</value>
+        <value key="weight">60</value>
+    </records>
+
+    <records prefix="plone.app.mosaic.app_tiles.news"
+        interface="plone.app.mosaic.interfaces.ITile">
+        <value key="name">iaweb.mosaic.tile.tiles</value>
+        <value key="label">Add news</value>
+        <value key="category">iaweb</value>
+        <value key="tile_type">app</value>
+        <value key="default_value"></value>
+        <value key="read_only">false</value>
+        <value key="settings">true</value>
+        <value key="favorite">false</value>
+        <value key="rich_text">false</value>
+        <value key="weight">10</value>
+    </records>
 
 </registry>

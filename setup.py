@@ -45,6 +45,7 @@ setup(
         'setuptools',
         'z3c.jbot',
         'plone.app.mosaic',
+        'plone.directives.form',
     ],
     extras_require={
         'test': [
