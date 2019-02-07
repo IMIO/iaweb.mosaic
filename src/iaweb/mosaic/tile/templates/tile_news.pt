@@ -5,17 +5,36 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal">
     <body>
-        <section tal:define="result view/contents">
-            <tal:news tal:repeat="news result">
-            <div class="items">
-                <a href="" tal:attributes="href news/getURL">
-                <div class="title" tal:content="news/Title"></div>
-                <div class="description" tal:content="news/Description"></div>
-                <div class="image-background"
-                     tal:attributes="style string:background-image:url(${news/getURL}/@@images/image)"></div>
-                </a>
-            </div>
-            </tal:news>
+        <section class="slider slider-multiple" tal:define="result view/contents">
+            <div class="flexslider carousel">
+                <ul class="slides">
+
+                    <tal:news tal:repeat="news result">
+                    <li class="items">
+                        <a href="" tal:attributes="href news/getURL">
+                            <div class="image-background"
+                                 tal:attributes="style string:background-image:url(${news/getURL}/@@images/image)"></div>
+                        </a>
+
+                        <div class="flex-caption">
+                            <div class="flex-caption-inner">
+                                <h2>
+                                    <a class="slider_multiple_link" tal:attributes="href news/getURL">
+                                        <span class="title" tal:content="news/Title" /></a>
+                                </h2>
+                            </div>
+                        </div>
+                    </li>
+                    </tal:news>
+
+                </ul>
+
+                </div>
+                <div class="align-right">
+                    <a class="voir-tout" href="">
+                        Voir l'ensemble des actualités
+                    </a>
+                </div>
         </section>
     </body>
 </html>
