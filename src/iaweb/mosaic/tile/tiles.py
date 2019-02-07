@@ -55,3 +55,6 @@ class NewsTile(Tile):
         if collection:
             results = collection.queryCatalog(batch=True, b_size=limit)
         return results
+
+    def get_limit(self):
+        return self.data["limit_slider"]

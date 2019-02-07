@@ -5,10 +5,13 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal">
     <body>
-        <section class="slider slider-multiple" tal:define="result view/contents">
-            <div class="flexslider carousel">
+        <section class="slider slider-multiple"
+                 tal:define="result view/contents;
+                             limit view/get_limit">
+            <div class="flexslider carousel"
+                 tal:attributes="data-slider limit"
+                 data-slider="4">
                 <ul class="slides">
-
                     <tal:news tal:repeat="news result">
                     <li class="items">
                         <a href="" tal:attributes="href news/getURL">
