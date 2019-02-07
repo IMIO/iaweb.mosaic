@@ -27,7 +27,7 @@ class INewsTile(Schema):
         title=_(u'Limit'),
         description=_(u'Limit Search Results'),
         required=False,
-        default=100,
+        default=8,
         min=1,
     )
 
@@ -35,7 +35,7 @@ class INewsTile(Schema):
         title=_(u'Limit slider'),
         description=_(u'Number of element in slider'),
         required=False,
-        default=100,
+        default=4,
         min=1,
     )
 
