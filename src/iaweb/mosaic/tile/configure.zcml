@@ -8,7 +8,7 @@
 
     <plone:tile
         name="iaweb.mosaic.tile.tiles"
-        title="Add news"
+        title="News and Events"
         description="A tile which displays a collection of news"
         add_permission="cmf.ModifyPortalContent"
         class=".tiles.NewsTile"
