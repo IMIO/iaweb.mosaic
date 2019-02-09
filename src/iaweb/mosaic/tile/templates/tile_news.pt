@@ -7,9 +7,9 @@
     <body>
         <section class="slider slider-multiple"
                  tal:define="result view/contents;
-                             limit view/get_limit">
+                             slider_limit view/slider_limit">
             <div class="flexslider carousel"
-                 tal:attributes="data-slider limit"
+                 tal:attributes="data-slider slider_limit"
                  data-slider="4">
                 <ul class="slides">
                     <tal:news tal:repeat="news result">
