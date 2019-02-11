@@ -1,6 +1,3 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -15,7 +12,7 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: iaweb.mosaic\n"
+"Domain: DOMAIN\n"
 
 #: ../tile/tiles.py:27
 msgid "Limit"
@@ -27,17 +24,17 @@ msgstr ""
 
 #: ../tile/tiles.py:35
 msgid "Limit slider"
-msgstr ""
+msgstr "Limite du slider"
 
 #: ../tile/tiles.py:36
 msgid "Number of element in slider"
-msgstr ""
+msgstr "Nombre d'élément dans le slide"
 
 #: ../tile/tiles.py:16
 msgid "Select an existing content"
-msgstr ""
+msgstr "Selectionner un contenu existant"
 
 #: ../tile/templates/tile_news.pt:40
 msgid "View all"
-msgstr ""
+msgstr "Voir tout"
 

@@ -3,16 +3,19 @@
       xml:lang="en"
       lang="en"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
-      xmlns:metal="http://xml.zope.org/namespaces/metal">
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="iaweb.mosaic">
     <body>
         <section class="slider slider-multiple"
-                 tal:define="result view/contents;
-                             slider_limit view/slider_limit">
+                 tal:define="data view/contents;
+                             slider_limit view/slider_limit;
+                             url data/url;
+                             results data/results">
             <div class="flexslider carousel"
                  tal:attributes="data-slider slider_limit"
                  data-slider="4">
                 <ul class="slides">
-                    <tal:news tal:repeat="news result">
+                    <tal:news tal:repeat="news results">
                     <li class="items">
                         <a href="" tal:attributes="href news/getURL">
                             <div class="image-background"
@@ -32,12 +35,12 @@
 
                 </ul>
 
-                </div>
-                <div class="align-right">
-                    <a class="voir-tout" href="">
-                        Voir l'ensemble des actualités
-                    </a>
-                </div>
+            </div>
+            <div class="align-right">
+                <a class="voir-tout" href="#" tal:attributes="href url" i18n:translate="">
+                    View all
+                </a>
+            </div>
         </section>
     </body>
 </html>

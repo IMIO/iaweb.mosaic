@@ -52,9 +52,14 @@ class NewsTile(Tile):
         uid = self.data["collection_uid"]
         collection = api.content.get(UID=uid)
         limit = self.data["limit"]
+        data = {
+            'url': '',
+            'results': [],
+        }
         if collection:
-            results = collection.queryCatalog(batch=True, b_size=limit)
-        return results
+            data["url"] = collection.absolute_url()
+            data["results"] = collection.queryCatalog(batch=True, b_size=limit)
+        return data
 
     @property
     def slider_limit(self):
