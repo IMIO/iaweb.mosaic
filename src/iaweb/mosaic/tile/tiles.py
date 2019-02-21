@@ -64,3 +64,10 @@ class NewsTile(Tile):
     @property
     def slider_limit(self):
         return self.data["limit_slider"]
+
+    def slider_class(self):
+        limit = self.data["limit_slider"]
+        if limit == 1:
+            return 'flexslider carousel one'
+        else:
+            return 'flexslider carousel multiple'

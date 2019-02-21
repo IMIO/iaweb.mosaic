@@ -9,10 +9,12 @@
         <section class="slider slider-multiple"
                  tal:define="data view/contents;
                              slider_limit view/slider_limit;
+                             slider_class view/slider_class;
                              url data/url;
                              results data/results">
             <div class="flexslider carousel"
-                 tal:attributes="data-slider slider_limit"
+                 tal:attributes="data-slider slider_limit;
+                                 class slider_class"
                  data-slider="4">
                 <ul class="slides">
                     <tal:news tal:repeat="news results">
@@ -28,7 +30,16 @@
                                     <a class="slider_multiple_link" tal:attributes="href news/getURL">
                                         <span class="title" tal:content="news/Title" /></a>
                                 </h2>
+                                <p>
+                                    <a tal:attributes="href news/getURL" tal:content="news/Description">
+                                    </a>
+                                </p>
                             </div>
+                        </div>
+                        <div class="read-next-line">
+                            <a class="slider_multiple_link" tal:attributes="href news/getURL">
+                                Lire la suite
+                            </a>
                         </div>
                     </li>
                     </tal:news>
