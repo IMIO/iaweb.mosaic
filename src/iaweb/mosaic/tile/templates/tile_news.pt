@@ -17,32 +17,32 @@
                                  class slider_class"
                  data-slider="4">
                 <ul class="slides">
-                    <tal:news tal:repeat="news results">
+                    <tal:element tal:repeat="element results">
                     <li class="items">
-                        <a href="" tal:attributes="href news/getURL">
+                        <a href="" tal:attributes="href element/getURL">
                             <div class="image-background"
-                                 tal:attributes="style string:background-image:url(${news/getURL}/@@images/image)"></div>
+                                 tal:attributes="style string:background-image:url(${element/getURL}/@@images/image)"></div>
                         </a>
 
                         <div class="flex-caption">
                             <div class="flex-caption-inner">
                                 <h2>
-                                    <a class="slider_multiple_link" tal:attributes="href news/getURL">
-                                        <span class="title" tal:content="news/Title" /></a>
+                                    <a class="slider_multiple_link" tal:attributes="href element/getURL">
+                                        <span class="title" tal:content="element/Title" /></a>
                                 </h2>
                                 <p>
-                                    <a tal:attributes="href news/getURL" tal:content="news/Description">
+                                    <a tal:attributes="href element/getURL" tal:content="element/Description">
                                     </a>
                                 </p>
                             </div>
                         </div>
                         <div class="read-next-line">
-                            <a class="slider_multiple_link" tal:attributes="href news/getURL">
+                            <a class="slider_multiple_link" tal:attributes="href element/getURL">
                                 Lire la suite
                             </a>
                         </div>
                     </li>
-                    </tal:news>
+                    </tal:element>
 
                 </ul>
 
