@@ -5,7 +5,8 @@ Changelog
 1.0a2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Display dates if the element is an event
+  [mpeeters]
 
 
 1.0a1 (2019-02-23)

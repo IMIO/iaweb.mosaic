@@ -30,6 +30,12 @@
                                     <a class="slider_multiple_link" tal:attributes="href element/getURL">
                                         <span class="title" tal:content="element/Title" /></a>
                                 </h2>
+                                <tal:block condition="python: element.portal_type == 'Event'">
+                                <div class="documentByLine"
+                                     tal:define="obj element/getObject;
+                                                 event_view nocall:obj/@@event_summary;"
+                                     tal:content="structure python:event_view.formatted_date(obj)"></div>
+                                </tal:block>
                                 <p>
                                     <a tal:attributes="href element/getURL" tal:content="element/Description">
                                     </a>
