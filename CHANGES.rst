@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a2 (unreleased)
+1.0a2 (2019-04-02)
 ------------------
 
 - Display dates if the element is an event
