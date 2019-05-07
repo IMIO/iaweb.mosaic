@@ -5,7 +5,8 @@ Changelog
 1.0a3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Adapt news and events tile for folder
+  [AuroreMariscal]
 
 
 1.0a2 (2019-04-02)

@@ -12,15 +12,20 @@ from zope import schema
 class INewsTile(Schema):
     """A tile that displays a listing of content items"""
 
-    collection_uid = schema.Choice(
+    title = schema.TextLine(
+        title=_(u'Title'),
+        required=False,
+    )
+
+    uid = schema.Choice(
         title=_(u"Select an existing content"),
         required=True,
         vocabulary='plone.app.vocabularies.Catalog',
     )
     directives.widget(
-        'collection_uid',
+        'uid',
         RelatedItemsFieldWidget,
-        pattern_options={'selectableTypes': ['Collection']},
+        pattern_options={'selectableTypes': ['Collection', 'Folder']},
     )
 
     limit = schema.Int(
@@ -49,17 +54,32 @@ class NewsTile(Tile):
         return self.template()
 
     def contents(self):
-        uid = self.data["collection_uid"]
-        collection = api.content.get(UID=uid)
+        uid = self.data["uid"]
+        container = api.content.get(UID=uid)
+        catalog = api.portal.get_tool('portal_catalog')
         limit = self.data["limit"]
         data = {
             'url': '',
             'results': [],
         }
-        if collection:
-            data["url"] = collection.absolute_url()
-            data["results"] = collection.queryCatalog(batch=True, b_size=limit)
+        if container:
+            data["url"] = container.absolute_url()
+            if container.portal_type == 'Folder':
+                results = container.listFolderContents(
+                        contentFilter={"portal_type": ["Event", "News Item"]}
+                )
+                for result in results[:limit]:
+                    obj = catalog(UID=result.UID())
+                    if obj:
+                        data["results"].append(obj[0])
+            if container.portal_type == 'Collection':
+                results = container.queryCatalog(batch=True, b_size=limit)
+                for result in results:
+                    data["results"].append(result)
         return data
+
+    def title(self):
+        return self.data["title"]
 
     @property
     def slider_limit(self):
