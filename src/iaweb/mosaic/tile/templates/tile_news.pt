@@ -20,7 +20,8 @@
                 <ul class="slides">
                     <tal:element tal:repeat="element results">
                     <li class="items">
-                        <a href="" tal:attributes="href element/getURL">
+                        <a href="" tal:attributes="href element/getURL;
+                                                   class element/portal_type;">
                             <div class="image-background"
                                  tal:attributes="style string:background-image:url(${element/getURL}/@@images/image)"></div>
                         </a>
