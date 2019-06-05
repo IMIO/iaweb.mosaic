@@ -55,27 +55,28 @@ class NewsTile(Tile):
 
     def contents(self):
         uid = self.data["uid"]
-        container = api.content.get(UID=uid)
-        catalog = api.portal.get_tool('portal_catalog')
-        limit = self.data["limit"]
         data = {
             'url': '',
             'results': [],
         }
-        if container:
-            data["url"] = container.absolute_url()
-            if container.portal_type == 'Folder':
-                results = container.listFolderContents(
-                        contentFilter={"portal_type": ["Event", "News Item"]}
-                )
-                for result in results[:limit]:
-                    obj = catalog(UID=result.UID())
-                    if obj:
-                        data["results"].append(obj[0])
-            if container.portal_type == 'Collection':
-                results = container.queryCatalog(batch=True, b_size=limit)
-                for result in results:
-                    data["results"].append(result)
+        if uid:
+            container = api.content.get(UID=uid)
+            catalog = api.portal.get_tool('portal_catalog')
+            limit = self.data["limit"]
+            if container:
+                data["url"] = container.absolute_url()
+                if container.portal_type == 'Folder':
+                    results = container.listFolderContents(
+                            contentFilter={"portal_type": ["Event", "News Item"]}
+                    )
+                    for result in results[:limit]:
+                        obj = catalog(UID=result.UID())
+                        if obj:
+                            data["results"].append(obj[0])
+                if container.portal_type == 'Collection':
+                    results = container.queryCatalog(batch=True, b_size=limit)
+                    for result in results:
+                        data["results"].append(result)
         return data
 
     def title(self):

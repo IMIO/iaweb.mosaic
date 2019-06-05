@@ -11,7 +11,8 @@
                              slider_limit view/slider_limit;
                              slider_class view/slider_class;
                              url data/url;
-                             results data/results">
+                             results data/results"
+                 tal:condition="results">
             <h2 tal:condition="view/title" tal:content="view/title"></h2>
             <div class="flexslider carousel"
                  tal:attributes="data-slider slider_limit;
