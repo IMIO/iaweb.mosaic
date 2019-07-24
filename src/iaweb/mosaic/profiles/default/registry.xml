@@ -15,4 +15,35 @@
         <value key="weight">10</value>
     </records>
 
+    <records prefix="plone.resources/iaweb-mosaic"
+         interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+        <value key="css">
+          <element>++plone++iaweb.mosaic/slider-ideabox.less</element>
+        </value>
+    </records>
+    <records prefix="plone.resources/iaweb-mosaic"
+         interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+        <value key="css">
+          <element>++plone++iaweb.mosaic/slider-ideabox.less</element>
+        </value>
+    </records>
+    <records prefix="plone.resources/iaweb-mosaic"
+         interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+	 <value key="js">++plone++iaweb.mosaic/iaweb-mosaic.js</value>
+    </records>
+    <records prefix="plone.resources/iaweb-mosaic"
+         interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+	 <value key="js">++plone++iaweb.mosaic/jquery.flexslider.js</value>
+    </records>
+    <records prefix="plone.bundles/iaweb-mosaic"
+                interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+      <value key="resources">
+        <element>iaweb-mosaic</element>
+      </value>
+      <value key="enabled">True</value>
+      <value key="jscompilation">++plone++static/iaweb-mosaic.js</value>
+      <value key="csscompilation">++plone++static/iaweb-mosaic.css</value>
+      <value key="last_compilation"></value>
+    </records>
+
 </registry>
