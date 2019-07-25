@@ -1,4 +1,4 @@
-$(document).ready(function() {
+(function ($) {
   var $window = $(window),
     flexslider = { vars: {} };
 
@@ -30,5 +30,5 @@ $(document).ready(function() {
       }
     });
   });
-});
 
+})(jQuery);

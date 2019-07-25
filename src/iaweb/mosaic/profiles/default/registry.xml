@@ -20,10 +20,7 @@
         <value key="css">
           <element>++plone++iaweb.mosaic/slider.ideabox.less</element>
         </value>
-    </records>
-    <records prefix="plone.resources/iaweb-mosaic"
-         interface='Products.CMFPlone.interfaces.IResourceRegistry'>
-	 <value key="js">++plone++iaweb.mosaic/iaweb.mosaic.js</value>
+	<value key="js">++plone++iaweb.mosaic/iaweb.mosaic.js</value>
     </records>
     <records prefix="plone.resources/iaweb-mosaic"
          interface='Products.CMFPlone.interfaces.IResourceRegistry'>
