@@ -20,9 +20,9 @@
         <value key="css">
           <element>++plone++iaweb.mosaic/slider.ideabox.less</element>
         </value>
-	<value key="js">++plone++iaweb.mosaic/iaweb.mosaic.js</value>
+	<value key="js">++plone++iaweb.mosaic/slider.iaweb.mosaic.js</value>
     </records>
-    <records prefix="plone.resources/iaweb-mosaic"
+    <records prefix="plone.resources/iaweb-mosaic-flexslider"
          interface='Products.CMFPlone.interfaces.IResourceRegistry'>
 	 <value key="js">++plone++iaweb.mosaic/jquery.flexslider.js</value>
     </records>
@@ -30,6 +30,7 @@
                 interface='Products.CMFPlone.interfaces.IBundleRegistry'>
       <value key="resources">
         <element>iaweb-mosaic</element>
+        <element>iaweb-mosaic-flexslider</element>
       </value>
       <value key="enabled">True</value>
       <value key="jscompilation">++plone++static/iaweb-mosaic.js</value>
