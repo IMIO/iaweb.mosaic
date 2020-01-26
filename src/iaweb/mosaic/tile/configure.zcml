@@ -18,4 +18,16 @@
         template="templates/tile_news.pt"
         />
 
+    <plone:tile
+        name="iaweb.mosaic.tile.slider"
+        title="Slider"
+        description="A slider"
+        add_permission="cmf.ModifyPortalContent"
+        class=".slider.SliderTile"
+        for="*"
+        permission="zope.Public"
+        schema=".slider.ISliderTile"
+        template="templates/slider.pt"
+        />
+
 </configure>
