@@ -72,15 +72,14 @@ class SliderTile(Tile):
         #import pdb; pdb.set_trace()
         uid = self.data["collection_uid"]
         attrs = json.dumps(
-        {"infinite": str(self.data["infinite"]).lower(), "dots": self.data["dots"]}
+            {
+                "infinite": self.data["infinite"],
+                "dots": self.data["dots"],
+                "slidesToShow": self.data["slidesToShow"],
+                "slidesToScroll": self.data["slidesToScroll"],
+                "speed": self.data["speed"],
+            }
         )
-        #options = {
-        #    'infinite': self.data["infinite"],
-        #    'dots': 'false',
-        #    'slidesToScroll': self.data["slidesToScroll"],
-        #    'slidesToShow': self.data["slidesToShow"],
-        #    'speed': self.data["speed"],
-        #}
         data = {"url": "", "results": [], "options": attrs}
         limit = self.data["limit"]
         if uid and limit:
