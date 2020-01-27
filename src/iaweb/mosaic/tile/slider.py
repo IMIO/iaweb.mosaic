@@ -30,7 +30,7 @@ class ISliderTile(Schema):
 
     dots = schema.Bool(title=_(u"Dots"), required=False, default=True)
 
-    nav = schema.Bool(title=_(u"Nav button"), required=False, default=True)
+    arrows = schema.Bool(title=_(u"Arrows"), required=False, default=True)
 
     slidesToShow = schema.Int(
         title=_(u"Show"),
@@ -100,7 +100,7 @@ class SliderTile(Tile):
                 "slidesToShow": self.data["slidesToShow"],
                 "slidesToScroll": self.data["slidesToScroll"],
                 "speed": self.data["speed"],
-                "nav": self.data["nav"],
+                "arrows": self.data["arrows"],
             }
         )
         display = {
