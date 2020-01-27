@@ -29,11 +29,4 @@
     });
   });
 
-  // SLICK SLIDER
-  $(document).ready(function () {
-    $(".iaweb-mosaic-slick").each(function () {
-      $(this).slick();
-    });
-  });
-
 })(jQuery);

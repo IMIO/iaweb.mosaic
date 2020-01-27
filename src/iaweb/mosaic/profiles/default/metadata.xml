@@ -3,5 +3,6 @@
   <version>1000</version>
   <dependencies>
     <dependency>profile-plone.app.mosaic:default</dependency>
+    <dependency>profile-imio.patterns:default</dependency>
   </dependencies>
 </metadata>

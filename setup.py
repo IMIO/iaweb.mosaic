@@ -47,6 +47,7 @@ setup(
         "setuptools",
         "z3c.jbot",
         "plone.app.mosaic",
+        "imio.patterns",
     ],
     extras_require={
         "test": [
@@ -56,7 +57,6 @@ setup(
             # plone_coredev tests as of 2016-04-01.
             "plone.testing>=5.0.0",
             "plone.app.contenttypes",
-            "plone.app.robotframework[debug]",
         ]
     },
     entry_points="""

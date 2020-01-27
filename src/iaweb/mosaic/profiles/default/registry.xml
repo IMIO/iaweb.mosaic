@@ -62,25 +62,4 @@
     <value key="last_compilation">2020-01-26 19:00:00</value>
   </records>
 
-
-  <records prefix="plone.resources/slick" interface='Products.CMFPlone.interfaces.IResourceRegistry'>
-    <value key="css">
-      <element>++plone++iaweb.mosaic/css/slick.css</element>
-    </value>
-    <value key="js">++plone++iaweb.mosaic/js/slick.js</value>
-  </records>
-  
-  <records prefix="plone.bundles/slick" interface='Products.CMFPlone.interfaces.IBundleRegistry'>
-    <value key="resources">
-      <element>slick</element>
-    </value>
-    <value key="expression"></value>
-    <value key="merge_with"></value>
-    <value key="enabled">True</value>
-    <value key="compile">True</value>
-    <value key="jscompilation">++plone++iaweb.mosaic/js/slick.js</value>
-    <value key="csscompilation">++plone++iaweb.mosaic/css/slick.css</value>
-    <value key="last_compilation">2020-01-26 19:00:00</value>
-  </records>
-
 </registry>
