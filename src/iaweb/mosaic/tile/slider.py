@@ -8,6 +8,8 @@ from plone.app.z3cform.widget import RelatedItemsFieldWidget
 from plone.autoform import directives
 from plone.app.standardtiles import PloneMessageFactory as _
 
+import json
+
 
 class ISliderTile(Schema):
     """
@@ -69,10 +71,9 @@ class SliderTile(Tile):
     def contents(self):
         #import pdb; pdb.set_trace()
         uid = self.data["collection_uid"]
-        attrs = (
-            '{"infinite": "%s",'
-            '"dots": "%s"}'
-        ) % (str(self.data["infinite"]).lower(), str(self.data["dots"]).lower())
+        attrs = json.dumps(
+        {"infinite": str(self.data["infinite"]).lower(), "dots": self.data["dots"]}
+        )
         #options = {
         #    'infinite': self.data["infinite"],
         #    'dots': 'false',
