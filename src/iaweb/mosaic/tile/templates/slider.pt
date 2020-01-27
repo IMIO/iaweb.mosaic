@@ -3,16 +3,19 @@
     xmlns:tal="http://xml.zope.org/namespaces/tal" 
     xmlns:metal="http://xml.zope.org/namespaces/metal" i18n:domain="iaweb.mosaic">
     <body>
-        <div class="pat-imio-slick" data-pat-imio-slick='{"slidesToShow": 3, "slidesToScroll": 2, "infinite": true, "dots": true, "speed": 500}'>
+        <div tal:define="results view/contents;
+                         url results/url;
+                         items results/results;
+                         options results/options;" class="pat-imio-slick" tal:attributes="data-pat-imio-slick options">
+            <tal:item tal:repeat="item items;">
+                <div tal:content="item/title"></div>
+            </tal:item>
+        </div>
+
+        <div class="pat-imio-slick" data-pat-imio-slick='{"slidesToShow": 1, "slidesToScroll": 1, "infinite": "false", "dots": "false", "speed": 100}'>
             <div>slide 1</div>
             <div>slide 2</div>
             <div>slide 3</div>
-            <div>slide 4</div>
-            <div>slide 6</div>
-            <div>slide 7</div>
-            <div>slide 8</div>
-            <div>slide 9</div>
-            <div>slide 10</div>
         </div>
     </body>
 </html>
