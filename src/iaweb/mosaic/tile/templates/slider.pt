@@ -7,9 +7,14 @@
                          url results/url;
                          items results/results;
                          options results/options;" class="pat-imio-slick" tal:attributes="data-pat-imio-slick options">
-            <tal:item tal:repeat="item items;">
+            <div tal:repeat="item items;">
                 <div tal:content="item/title"></div>
-            </tal:item>
+                <div tal:content="item/description"></div>
+                <div tal:define="item_has_image python:item.getIcon">
+                    <img tal:condition="item_has_image"
+                    tal:attributes="src string:${item/getURL}/@@images/image/thumb" />
+                </div>
+            </div>
         </div>
     </body>
 </html>
