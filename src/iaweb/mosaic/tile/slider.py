@@ -7,6 +7,7 @@ from zope import schema
 from plone.app.z3cform.widget import RelatedItemsFieldWidget
 from plone.autoform import directives
 from plone.app.standardtiles import PloneMessageFactory as _
+from plone.supermodel import model
 
 import json
 
@@ -28,6 +29,8 @@ class ISliderTile(Schema):
     infinite = schema.Bool(title=_(u"Infinite"), required=False, default=True)
 
     dots = schema.Bool(title=_(u"Dots"), required=False, default=True)
+
+    nav = schema.Bool(title=_(u"Nav button"), required=False, default=True)
 
     slidesToShow = schema.Int(
         title=_(u"Show"),
@@ -58,6 +61,25 @@ class ISliderTile(Schema):
         default=10,
     )
 
+    model.fieldset(
+        'display',
+        label=_(u'Display options'),
+        fields=[
+            'title',
+            'description',
+            'date',
+            'all_button',
+        ]
+    )
+
+    title = schema.Bool(title=_(u"Title"), required=False, default=True)
+
+    description = schema.Bool(title=_(u"Description"), required=False, default=True)
+
+    date = schema.Bool(title=_(u"Date"), required=False, default=True)
+
+    all_button = schema.Bool(title=_(u"All button"), required=False, default=True)
+
 
 class SliderTile(Tile):
     """
@@ -78,9 +100,16 @@ class SliderTile(Tile):
                 "slidesToShow": self.data["slidesToShow"],
                 "slidesToScroll": self.data["slidesToScroll"],
                 "speed": self.data["speed"],
+                "nav": self.data["nav"],
             }
         )
-        data = {"url": "", "results": [], "options": attrs}
+        display = {
+            "title": self.data["title"],
+            "description": self.data["description"],
+            "date": self.data["date"],
+            "all_button": self.data["all_button"],
+        }
+        data = {"url": "", "results": [], "options": attrs, "display": display}
         limit = self.data["limit"]
         if uid and limit:
             collection = api.content.get(UID=uid)
