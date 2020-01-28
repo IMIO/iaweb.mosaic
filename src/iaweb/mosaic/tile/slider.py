@@ -60,7 +60,12 @@ class ISliderTile(Schema):
         required=False,
         default=10,
     )
-
+    size = schema.TextLine(
+        title=_(u"Image size"),
+        description=_(u"Size of image slider (ex: thumb, large,...)"),
+        required=False,
+        default=_(u"thumb"),
+    )
     model.fieldset(
         'display',
         label=_(u'Display options'),
@@ -109,7 +114,11 @@ class SliderTile(Tile):
             "date": self.data["date"],
             "all_button": self.data["all_button"],
         }
-        data = {"url": "", "results": [], "options": attrs, "display": display}
+
+        size = {
+            "size": self.data["size"],
+        }
+        data = {"url": "", "results": [], "options": attrs, "display": display, "size": size}
         limit = self.data["limit"]
         if uid and limit:
             collection = api.content.get(UID=uid)

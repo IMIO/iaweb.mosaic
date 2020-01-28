@@ -7,7 +7,8 @@
                          url results/url;
                          items results/results;
                          options results/options;
-                         display results/display">
+                         display results/display;
+                         size results/size">
             <div class="pat-imio-slick" tal:attributes="data-pat-imio-slick options">
                 <tal:item tal:repeat="item items;">
                     <div class="item" tal:define="item_has_image python:item.getIcon;
@@ -19,7 +20,7 @@
                                     item_url python:item.getURL()">
                         <a href="" tal:attributes="href item_url">
                             <div class="slick-image">
-                                <img tal:condition="item_has_image" tal:attributes="src string:${item/getURL}/@@images/image/thumb" />
+                                <img tal:condition="item_has_image" tal:attributes="src string:${item/getURL}/@@images/image/${size/size}" />
                             </div>
                             <div class="title" tal:condition="display/title" tal:content="item/title"></div>
                             <div class="description" tal:condition="display/description" tal:content="item/description"></div>
