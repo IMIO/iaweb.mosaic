@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone import api
 from plone.app.standardtiles import PloneMessageFactory as _
 from plone.app.z3cform.widget import RelatedItemsFieldWidget
 from plone.autoform import directives
 from plone.supermodel.model import Schema
 from plone.tiles import Tile
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 
 
@@ -67,7 +67,7 @@ class NewsTile(Tile):
                 data["url"] = container.absolute_url()
                 if container.portal_type == 'Folder':
                     results = container.listFolderContents(
-                            contentFilter={"portal_type": ["Event", "News Item"]}
+                        contentFilter={"portal_type": ["Event", "News Item"]}
                     )
                     for result in results[:limit]:
                         obj = catalog(UID=result.UID())
