@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from plone.supermodel.model import Schema
-from plone.tiles import Tile
 from plone import api
-from zope import schema
+from plone.app.standardtiles import PloneMessageFactory as _
 from plone.app.z3cform.widget import RelatedItemsFieldWidget
 from plone.autoform import directives
-from plone.app.standardtiles import PloneMessageFactory as _
 from plone.supermodel import model
+from plone.supermodel.model import Schema
+from plone.tiles import Tile
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from zope import schema
 
 import json
 
@@ -74,7 +74,7 @@ class ISliderTile(Schema):
             'description',
             'date',
             'all_button',
-        ]
+        ],
     )
 
     title = schema.Bool(title=_(u"Title"), required=False, default=True)

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone import api
 from plone.app.standardtiles import PloneMessageFactory as _
 from plone.app.z3cform.widget import RelatedItemsFieldWidget
 from plone.autoform import directives
 from plone.supermodel.model import Schema
 from plone.tiles import Tile
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 
 
