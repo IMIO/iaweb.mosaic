@@ -47,6 +47,7 @@ setup(
         "setuptools",
         "z3c.jbot",
         "plone.app.mosaic",
+        "imio.patterns",
     ],
     extras_require={
         "test": [

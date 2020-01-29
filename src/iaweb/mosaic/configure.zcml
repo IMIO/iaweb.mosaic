@@ -13,6 +13,8 @@
   -->
   <!--<includeDependencies package="." />-->
 
+  <include package="imio.patterns" />
+
   <include package=".browser" />
   <include package=".tile" />
 

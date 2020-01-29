@@ -1,6 +1,4 @@
 (function ($) {
-  var $window = $(window),
-    flexslider = { vars: {} };
 
   function getGridSize(limit) {
     var number = limit;
@@ -16,7 +14,7 @@
     return number;
   }
 
-  $(".flexslider").each(function() {
+  $(".flexslider").each(function () {
     var limit = $(this).attr("data-slider");
     $(this).flexslider({
       animation: "slide",
@@ -25,7 +23,7 @@
       itemMargin: 5,
       minItems: getGridSize(limit),
       maxItems: getGridSize(limit),
-      start: function(slider) {
+      start: function (slider) {
         $("body").removeClass("loading");
       }
     });
