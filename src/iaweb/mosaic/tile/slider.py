@@ -77,13 +77,29 @@ class ISliderTile(Schema):
         ],
     )
 
-    title = schema.Bool(title=_(u"Title"), required=False, default=True)
+    title = schema.Bool(
+        title=_(u"Title"),
+        required=False,
+        default=True,
+    )
 
-    description = schema.Bool(title=_(u"Description"), required=False, default=True)
+    description = schema.Bool(
+        title=_(u"Description"),
+        required=False,
+        default=True,
+    )
 
-    date = schema.Bool(title=_(u"Date"), required=False, default=True)
+    date = schema.Bool(
+        title=_(u"Date"),
+        required=False,
+        default=True,
+    )
 
-    all_button = schema.Bool(title=_(u"All button"), required=False, default=True)
+    all_button = schema.Bool(
+        title=_(u"All button"),
+        required=False,
+        default=True,
+    )
 
 
 class SliderTile(Tile):
@@ -96,7 +112,7 @@ class SliderTile(Tile):
         return self.template()
 
     def contents(self):
-        #import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()
         uid = self.data["collection_uid"]
         attrs = json.dumps(
             {
@@ -106,7 +122,7 @@ class SliderTile(Tile):
                 "slidesToScroll": self.data["slidesToScroll"],
                 "speed": self.data["speed"],
                 "arrows": self.data["arrows"],
-            }
+            },
         )
         display = {
             "title": self.data["title"],
@@ -118,7 +134,13 @@ class SliderTile(Tile):
         size = {
             "size": self.data["size"],
         }
-        data = {"url": "", "results": [], "options": attrs, "display": display, "size": size}
+        data = {
+            "url": "",
+            "results": [],
+            "options": attrs,
+            "display": display,
+            "size": size,
+        }
         limit = self.data["limit"]
         if uid and limit:
             collection = api.content.get(UID=uid)

@@ -67,7 +67,7 @@ class NewsTile(Tile):
                 data["url"] = container.absolute_url()
                 if container.portal_type == 'Folder':
                     results = container.listFolderContents(
-                            contentFilter={"portal_type": ["Event", "News Item"]}
+                        contentFilter={"portal_type": ["Event", "News Item"]},
                     )
                     for result in results[:limit]:
                         obj = catalog(UID=result.UID())
