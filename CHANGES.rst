@@ -10,7 +10,7 @@ Changelog
   just adds a slider (using https://kenwheeler.github.io/slick/) 
   and was made to test functionnalities before the integration. 
   It's been merged and so is this release.
-  [AuroreMariscal, boulc, thomlamb, dmshd]
+  [AuroreMariscal, boulch, thomlamb, dmshd]
 
 1.0a3 (2019-08-02)
 ------------------
