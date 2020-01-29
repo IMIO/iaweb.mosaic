@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0a4 (unreleased)
+1.0a4 (2020-01-29)
 ------------------
 
 - integration of imio.patterns made by Aurore  
@@ -11,6 +11,7 @@ Changelog
   and was made to test functionnalities before the integration. 
   It's been merged and so is this release.
   [AuroreMariscal, boulch, thomlamb, dmshd]
+
 
 1.0a3 (2019-08-02)
 ------------------
