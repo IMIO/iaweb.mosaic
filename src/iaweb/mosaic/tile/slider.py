@@ -34,6 +34,26 @@ class ISliderTile(Schema):
 
     centerMode = schema.Bool(title=_(u"Center"), required=False, default=False)
 
+    fade = schema.Bool(title=_(u"fade"), required=False, default=False)
+
+    vertical = schema.Bool(title=_(u"vertical mode"), required=False, default=False)
+
+    autoplay = schema.Bool(title=_(u"Autoplay mode"), required=False, default=False)
+
+    pauseOnFocus = schema.Bool(title=_(u"pause on focus"), required=False, default=True)
+
+    cssEase = schema.TextLine(
+        title=_(u"ccsEase"),
+        description=_(u"Use css ease"),
+        required=False,
+        default=_(u"linear"),
+    )
+    autoplaySpeed = schema.Int(
+        title=_(u"autoplaySpeed"),
+        description=_(u"Speed of autoplay"),
+        required=False,
+        default=2000,
+    )
 
     slidesToShow = schema.Int(
         title=_(u"Show"),
@@ -126,6 +146,12 @@ class SliderTile(Tile):
                 "speed": self.data["speed"],
                 "arrows": self.data["arrows"],
                 "centerMode": self.data["centerMode"],
+                "fade": self.data["fade"],
+                "vertical": self.data["vertical"],
+                "cssEase": self.data["cssEase"],
+                "autoplay": self.data["autoplay"],
+                "autoplaySpeed": self.data["autoplaySpeed"],
+                "pauseOnFocus": self.data["pauseOnFocus"],
             },
         )
         display = {

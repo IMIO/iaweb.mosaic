@@ -4,7 +4,9 @@ Changelog
 1.0a5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Updating attr for slick.
+  add centerMode, fade, vertical, autoplay, pauseOnFocus, cssEase, autoplaySpeed attr.
+  [thomlamb]
 
 
 1.0a4 (2020-01-29)
