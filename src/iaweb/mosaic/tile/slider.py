@@ -32,6 +32,9 @@ class ISliderTile(Schema):
 
     arrows = schema.Bool(title=_(u"Arrows"), required=False, default=True)
 
+    centerMode = schema.Bool(title=_(u"Center"), required=False, default=False)
+
+
     slidesToShow = schema.Int(
         title=_(u"Show"),
         description=_(u"Slides to show"),
@@ -122,6 +125,7 @@ class SliderTile(Tile):
                 "slidesToScroll": self.data["slidesToScroll"],
                 "speed": self.data["speed"],
                 "arrows": self.data["arrows"],
+                "centerMode": self.data["centerMode"],
             },
         )
         display = {
