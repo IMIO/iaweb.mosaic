@@ -4,7 +4,8 @@ Changelog
 1.0a6 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Bad release
+  [bsuttor]
 
 
 1.0a5 (2020-01-06)
@@ -18,11 +19,11 @@ Changelog
 1.0a4 (2020-01-29)
 ------------------
 
-- integration of imio.patterns made by Aurore  
-  (affinitic & boulch) during the january 2020 sprint. 
-  The actual imio.patterns (https://github.com/IMIO/imio.patterns) 
-  just adds a slider (using https://kenwheeler.github.io/slick/) 
-  and was made to test functionnalities before the integration. 
+- integration of imio.patterns made by Aurore
+  (affinitic & boulch) during the january 2020 sprint.
+  The actual imio.patterns (https://github.com/IMIO/imio.patterns)
+  just adds a slider (using https://kenwheeler.github.io/slick/)
+  and was made to test functionnalities before the integration.
   It's been merged and so is this release.
   [AuroreMariscal, boulch, thomlamb, dmshd]
 
