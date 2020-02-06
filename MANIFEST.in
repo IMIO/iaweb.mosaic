@@ -6,3 +6,4 @@ global-exclude *.pyc
 exclude .gitlab-ci.yml
 exclude Makefile
 exclude requirements.txt
+exclude package-lock.json
