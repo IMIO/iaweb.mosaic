@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0a5 (unreleased)
+1.0a5 (2020-01-06)
 ------------------
 
 - Updating attr for slick.
