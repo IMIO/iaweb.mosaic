@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0a7 (unreleased)
+1.0a7 (2020-02-10)
 ------------------
 
 - Add attributes for slick.
