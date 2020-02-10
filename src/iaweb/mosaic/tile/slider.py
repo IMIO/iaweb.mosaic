@@ -124,6 +124,63 @@ class ISliderTile(Schema):
         default=True,
     )
 
+    breakpoint_full = schema.Int(
+        title=_(u"breakpoint_full"),
+        description=_(u"What size to display in breakpoint_full"),
+        required=False,
+        default=1024,
+    )
+    slidesToShow_full = schema.Int(
+        title=_(u"slidesToShow_full"),
+        description=_(u"how many element to display in breakpoint_full"),
+        required=False,
+        default=1,
+    )
+
+    slidesToScroll_full = schema.Int(
+        title=_(u"slidesToScroll_full"),
+        description=_(u"how many element scroll in breakpoint_full"),
+        required=False,
+        default=1,
+    )
+
+    breakpoint_medium = schema.Int(
+        title=_(u"breakpoint_medium"),
+        description=_(u"What size to display in breakpoint_medium"),
+        required=False,
+        default=600,
+    )
+    slidesToShow_medium = schema.Int(
+        title=_(u"slidesToShow_medium"),
+        description=_(u"how many element to display in breakpoint_medium"),
+        required=False,
+        default=1,
+    )
+    slidesToScroll_medium = schema.Int(
+        title=_(u"slidesToScroll_medium"),
+        description=_(u"how many element scroll in breakpoint_medium"),
+        required=False,
+        default=1,
+    )
+    breakpoint_small = schema.Int(
+        title=_(u"breakpoint_small"),
+        description=_(u"What size to display in breakpoint_small"),
+        required=False,
+        default=480,
+    )
+    slidesToShow_small = schema.Int(
+        title=_(u"slidesToShow_small"),
+        description=_(u"how many element to display in breakpoint_small"),
+        required=False,
+        default=1,
+    )
+    slidesToScroll_small = schema.Int(
+        title=_(u"slidesToScroll_small"),
+        description=_(u"how many element scroll in breakpoint_small"),
+        required=False,
+        default=1,
+    )
+
 
 class SliderTile(Tile):
     """
@@ -152,7 +209,30 @@ class SliderTile(Tile):
                 "autoplay": self.data["autoplay"],
                 "autoplaySpeed": self.data["autoplaySpeed"],
                 "pauseOnFocus": self.data["pauseOnFocus"],
-            },
+                "responsive": [
+                    {
+                        "breakpoint": self.data["breakpoint_full"],
+                        "settings": {
+                            "slidesToShow": self.data["slidesToShow_full"],
+                            "slidesToScroll":self.data["slidesToScroll_full"]
+                        }
+                    },
+                    {
+                        "breakpoint": self.data["breakpoint_medium"],
+                        "settings": {
+                            "slidesToShow": self.data["slidesToShow_medium"],
+                            "slidesToScroll":self.data["slidesToScroll_medium"]
+                        }
+                    },
+                    {
+                        "breakpoint": self.data["breakpoint_small"],
+                        "settings": {
+                            "slidesToShow": self.data["slidesToShow_small"],
+                            "slidesToScroll":self.data["slidesToScroll_small"]
+                        }
+                    }
+                ]
+            }
         )
         display = {
             "title": self.data["title"],

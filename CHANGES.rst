@@ -4,7 +4,9 @@ Changelog
 1.0a7 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add attributes for slick.
+  Serveral options to make custom responsive slider.
+  [thomlamb]
 
 
 1.0a6 (2020-02-06)
