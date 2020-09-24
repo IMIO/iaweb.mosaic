@@ -4,7 +4,8 @@ Changelog
 1.0a8 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- MWEBIMI-25: Hide slides after the first one to improve page loading
+  [mpeeters]
 
 
 1.0a7 (2020-02-10)
