@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0a8 (unreleased)
+1.0.0 (2021-01-04)
 ------------------
 
 - MWEBIMI-25: Hide slides after the first one to improve page loading
